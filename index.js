@@ -1,7 +1,5 @@
 const issApiUrl = "https://api.wheretheiss.at/v1/satellites/25544";
 
-const paragraph = document.getElementByID("iss-data");
-
 async function getIssData() {
     const response = await fetch(issApiUrl);
     const data = await response.json();
@@ -9,8 +7,6 @@ async function getIssData() {
 
     document.getElementById('lat').textContent = latitude;
     document.getElementById('lon').textContent = longitude;
-    console.log(latitude);
-    console.log(longitude);
 }
 
 getIssData();
