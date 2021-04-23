@@ -5,7 +5,12 @@ const paragraph = document.getElementByID("iss-data");
 async function getIssData() {
     const response = await fetch(issApiUrl);
     const data = await response.json();
-    console.log(data);
+    const { latitude, longitude } = data;
+
+    document.getElementById('lat').textContent = latitude;
+    document.getElementById('lon').textContent = longitude;
+    console.log(latitude);
+    console.log(longitude);
 }
 
 getIssData();
