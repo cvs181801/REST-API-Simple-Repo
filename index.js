@@ -8,7 +8,7 @@ const mymap = L.map('ISSMap').setView([0,0], 13);
 
 const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
 const tileURL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const tiles = L.tileLayer(tileURL,{ attribuition })
+const tiles = L.tileLayer(tileURL,{ attribuition });
 tiles.addTo(myMap);
 
 //get ISS data and display latitude, longitude, and altitude:
