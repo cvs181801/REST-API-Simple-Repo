@@ -1,7 +1,7 @@
 //API URL for the ISS data:
 const issApiUrl = "https://api.wheretheiss.at/v1/satellites/25544";
 
-//define the map (using Leaflet)
+//define the map (using Leaflet.js)
 const myMap = L.map('ISSMap').setView([0,0], 1);
 
 //define the map tile - my unique MapBox token has been added!
@@ -28,3 +28,6 @@ async function getIssData() {
 }
 
 getIssData();
+
+//Set the marker showing where the ISS is at based on current lat and lon!
+const marker = L.marker([latitude, longitude]).addTo(myMap);
