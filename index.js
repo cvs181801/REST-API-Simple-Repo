@@ -29,9 +29,6 @@ async function getIssData() {
     L.marker([latitude, longitude]).addTo(myMap);
 }
 
-//redefine the map (using Leaflet.js)??
-//let myMap = L.map('ISSMap').setView([latitude,longitude], 1);
-
 getIssData();
 
 
