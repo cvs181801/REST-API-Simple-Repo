@@ -2,10 +2,9 @@
 const issApiUrl = "https://api.wheretheiss.at/v1/satellites/25544";
 
 //define the map (using Leaflet.js)
-const myMap = L.map('ISSMap').setView([0,0], 1);
+let myMap = L.map('ISSMap').setView([0,0], 1);
 
 //define the map tile - my unique MapBox token has been added!
-
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -21,14 +20,17 @@ async function getIssData() {
     const data = await response.json();
     const { latitude, longitude, altitude, velocity } = data;
 
-    
     document.getElementById('lat').textContent = latitude;
     document.getElementById('lon').textContent = longitude;
     document.getElementById('alti').textContent = altitude;
     document.getElementById('velo').textContent = velocity;
+
     //Set the marker showing where the ISS is at based on current lat and lon!
     L.marker([latitude, longitude]).addTo(myMap);
 }
+
+//redefine the map (using Leaflet.js)??
+//let myMap = L.map('ISSMap').setView([latitude,longitude], 1);
 
 getIssData();
 
