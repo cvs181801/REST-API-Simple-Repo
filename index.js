@@ -44,10 +44,10 @@ async function getIssData() {
     myMap.setView([latitude, longitude], 1);
     firstTime = false;
     }
-    document.getElementById('lat').textContent = latitude;
-    document.getElementById('lon').textContent = longitude;
-    document.getElementById('alti').textContent = altitude;
-    document.getElementById('velo').textContent = velocity;
+    document.getElementById('lat').textContent = latitude.toFixed(2);
+    document.getElementById('lon').textContent = longitude.toFixed(2);
+    document.getElementById('alti').textContent = altitude.toFixed(2);
+    document.getElementById('velo').textContent = velocity.toFixed(2);
 
     
     
