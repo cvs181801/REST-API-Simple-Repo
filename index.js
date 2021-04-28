@@ -5,11 +5,10 @@ const issApiUrl = "https://api.wheretheiss.at/v1/satellites/25544";
 let myMap = L.map('ISSMap').setView([0,0], 1);
 
 //create an ISS icon, and set the marker starting point
-
 var issIcon = L.icon({
     iconUrl: 'ISS.png',
-    iconSize: [25, 16],
-    iconAnchor: [22, 94],
+    iconSize: [50, 32],
+    iconAnchor: [25, 16]
     //popupAnchor: [-3, -76],
     //shadowUrl: 'my-icon-shadow.png',
     //shadowSize: [25, 16],
