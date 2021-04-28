@@ -30,7 +30,7 @@ async function getIssData() {
     document.getElementById('velo').textContent = velocity;
 
     //Set the marker showing where the ISS is at based on current lat and lon!
-    marker.setLatLng(latitude, longitude);
+    marker.setLatLng([latitude, longitude]);
 }
 
 getIssData();
