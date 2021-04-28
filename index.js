@@ -40,6 +40,7 @@ async function getIssData() {
 
     //Set the marker showing where the ISS is at based on current lat and lon!
     marker.setLatLng([latitude, longitude]);
+    myMap.setView([latitude, longitude], 2);
 }
 
 getIssData();
