@@ -36,10 +36,6 @@ async function getIssData() {
     const data = await response.json();
     const { latitude, longitude, altitude, velocity } = data;
 
-    document.getElementById('lat').textContent = latitude;
-    document.getElementById('lon').textContent = longitude;
-    document.getElementById('alti').textContent = altitude;
-    document.getElementById('velo').textContent = velocity;
     //Set the marker showing where the ISS is at based on current lat and lon! 
     marker.setLatLng([latitude, longitude]);
 
@@ -48,6 +44,11 @@ async function getIssData() {
     myMap.setView([latitude, longitude], 1);
     firstTime = false;
     }
+
+    document.getElementById('lat').textContent = latitude;
+    document.getElementById('lon').textContent = longitude;
+    document.getElementById('alti').textContent = altitude;
+    document.getElementById('velo').textContent = velocity;
     
 }
 
