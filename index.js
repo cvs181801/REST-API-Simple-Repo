@@ -5,8 +5,7 @@ const issApiUrl = "https://api.wheretheiss.at/v1/satellites/25544";
 let myMap = L.map('ISSMap').setView([0,0], 1);
 
 //set the marker starting point
-
-const marker = L.marker([latitude, longitude]).addTo(myMap);
+const marker = L.marker([0, 0]).addTo(myMap);
 
 //define the map tile - my unique MapBox token has been added!
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
