@@ -15,7 +15,7 @@ var issIcon = L.icon({
     //shadowAnchor: [22, 94]
 });
 
-const marker = L.marker([0, 0], {icon: issIcon}).addTo(map);
+const marker = L.marker([0, 0], {icon: issIcon}).addTo(myMap);
 
 //define the map tile - my unique MapBox token has been added!
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
