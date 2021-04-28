@@ -38,9 +38,9 @@ async function getIssData() {
     document.getElementById('alti').textContent = altitude;
     document.getElementById('velo').textContent = velocity;
 
-    //Set the marker showing where the ISS is at based on current lat and lon!
+    //Set the marker showing where the ISS is at based on current lat and lon! Also, I set the view to always show the ISS icon in the middle of the page.
     marker.setLatLng([latitude, longitude]);
-    myMap.setView([latitude, longitude], 2);
+    myMap.setView([latitude, longitude], 1);
 }
 
 getIssData();
