@@ -27,20 +27,30 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiODk4OXZhbGt5cmllODk4OSIsImEiOiJja28wbXphZm4wNzl5MnZyd2dnMG1vNDdxIn0.zR05e3yW1qQj8d0CQRZgMQ'
 }).addTo(myMap);
 
+//set the view to start out by showing the ISS icon in the middle of the page.
+let firstTime = true;
+
 //get ISS data and display latitude, longitude, and altitude:
 async function getIssData() {
     const response = await fetch(issApiUrl);
     const data = await response.json();
     const { latitude, longitude, altitude, velocity } = data;
 
+    //Set the marker showing where the ISS is at based on current lat and lon! 
+    marker.setLatLng([latitude, longitude]);
+
+    //only set the view to show ISS icon in middle of page once, then stop.
+    if (firstTime) { 
+    myMap.setView([latitude, longitude], 1);
+    firstTime = false;
+    }
     document.getElementById('lat').textContent = latitude;
     document.getElementById('lon').textContent = longitude;
     document.getElementById('alti').textContent = altitude;
     document.getElementById('velo').textContent = velocity;
 
-    //Set the marker showing where the ISS is at based on current lat and lon! Also, I set the view to always show the ISS icon in the middle of the page.
-    marker.setLatLng([latitude, longitude]);
-    myMap.setView([latitude, longitude], 1);
+    
+    
 }
 
 getIssData();
