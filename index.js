@@ -45,6 +45,6 @@ async function getIssData() {
 
 getIssData();
 
-setInterval(getISSData, 1000);
+setInterval(getIssData, 1000);
 
 
