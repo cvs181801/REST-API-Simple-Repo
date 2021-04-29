@@ -32,14 +32,15 @@ let firstTime = true;
 
 //get ISS data and display latitude, longitude, and altitude:
 async function getIssData() {
-    try { const response = await fetch(issApiUrl);
-    const data = await response.json();
-    const { latitude, longitude, altitude, velocity } = data;
-    if (!response.ok) {
-      throw new Error(response.status);
-    }
-} catch (error) {
-    console.error(error);
+    //try { 
+     const response = await fetch(issApiUrl);
+     const data = await response.json();
+     const { latitude, longitude, altitude, velocity } = data;
+    //if (!response.ok) {
+    //  throw new Error(response.status);
+    //}
+//} catch (error) {
+ //   console.error(error);
 }
 
     //Set the marker showing where the ISS is at based on current lat and lon! 
