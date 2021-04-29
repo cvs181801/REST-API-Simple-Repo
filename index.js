@@ -36,26 +36,25 @@ async function getIssData() {
      const response = await fetch(issApiUrl);
      const data = await response.json();
      const { latitude, longitude, altitude, velocity } = data;
-    if (!response.ok) {
-      throw new Error(response.status);
-    }
-} catch (error) {
-   console.error(error);
-}
-
-    //Set the marker showing where the ISS is at based on current lat and lon! 
+     //Set the marker showing where the ISS is at based on current lat and lon! 
     marker.setLatLng([latitude, longitude]);
 
     
-//only set the view to show ISS icon in middle of page once, then stop.
-    if (firstTime) { 
-        myMap.setView([latitude, longitude], 1);
-        firstTime = false;
+    //only set the view to show ISS icon in middle of page once, then stop.
+        if (firstTime) { 
+            myMap.setView([latitude, longitude], 1);
+            firstTime = false;
+        }
+        document.getElementById('lat').textContent = latitude;
+        document.getElementById('lon').textContent = longitude;
+        document.getElementById('alti').textContent = altitude;
+        document.getElementById('velo').textContent = velocity;
+    if (!response.ok) {
+      throw new Error(response.status);
     }
-    document.getElementById('lat').textContent = latitude;
-    document.getElementById('lon').textContent = longitude;
-    document.getElementById('alti').textContent = altitude;
-    document.getElementById('velo').textContent = velocity;
+    } catch (error) {
+      console.error(error);
+    }
     
 }
 
