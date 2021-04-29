@@ -54,6 +54,7 @@ async function getIssData() {
 
 getIssData();
 
-setInterval(getIssData, 2000);
+//I tried making the icon move each second but the URL threw an error!
+//setInterval(getIssData, 2000);
 
 
