@@ -41,7 +41,7 @@ async function getIssData() {
     //}
 //} catch (error) {
  //   console.error(error);
-}
+//}
 
     //Set the marker showing where the ISS is at based on current lat and lon! 
     marker.setLatLng([latitude, longitude]);
